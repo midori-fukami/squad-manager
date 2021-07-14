@@ -1,0 +1,35 @@
+﻿section {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    margin: 150px auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+    form a {
+        text-align: right;
+    }
+
+
+input {
+    margin-top: 20px;
+}
+
+button {
+    margin: 20px 0;
+    background-color: #7dc87d;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+
+label {
+    margin-bottom: 30px;
+}
