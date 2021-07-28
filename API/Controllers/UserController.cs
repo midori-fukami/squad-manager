@@ -8,10 +8,19 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
+    /// <summary>
+    /// teste
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
+        /// <summary>
+        /// Autentica o usuário
+        /// </summary>
+        /// <param name="username">Username do usuário</param>
+        /// <param name="password">Senha do usuário</param>
+        /// <returns>OK</returns>
         [HttpGet]
         public IActionResult Login(string username, string password)
         {
