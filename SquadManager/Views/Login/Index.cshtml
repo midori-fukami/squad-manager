@@ -8,9 +8,9 @@
 <section>
     <h1>Autenticação</h1>
 
-    <form action="/Login/Test" method="post">
-        <input type="email" name="email" value="@Model.Email" placeholder="Username/e-mail" />
-        <input type="password" name="password" value="@Model.Password" placeholder="Senha" />
+    <form>
+        <input type="email" id="email" name="email" value="@Model.Email" placeholder="Username/e-mail" />
+        <input type="password" required id="password" name="password" value="@Model.Password" placeholder="Senha" />
         <a href="#">Esqueceu a senha?</a>
 
         <button type="submit">Login</button>
@@ -18,3 +18,6 @@
 
     <label>Não tem conta? <a href="#">Crei aqui</a></label>
 </section>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/login.js"></script>
