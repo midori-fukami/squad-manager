@@ -42,5 +42,10 @@ namespace SquadManager.Controllers
 
             return View("Index", user);
         }
+
+        public IActionResult SignUp()
+        {
+            return View();
+        }
     }
 }
