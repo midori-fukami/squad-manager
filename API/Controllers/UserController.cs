@@ -30,5 +30,14 @@ namespace API.Controllers
             else
                 return Ok(new { response = "ERROR" });
         }
+
+        [HttpPost("create")]
+        public IActionResult Create(UserModel user)
+        {
+            if (user.Password == "123")
+                return Ok(new { response = "OK" });
+            else
+                return Ok(new { response = "ERROR" });
+        }
     }
 }
