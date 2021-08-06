@@ -1,6 +1,16 @@
 ﻿$('form').on('submit', function (event) {
     event.preventDefault();
 
+    if ($("#password").val() != $("#confirmPassword").val()) {
+        $(".error span").show();
+
+        setTimeout(function () {
+            $(".error span").hide();
+        }, 3000)
+
+        return;
+    }
+
     var formData = {
         username: $("#username").val(),
         email: $("#email").val(),

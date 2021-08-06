@@ -8,10 +8,13 @@
 <section>
     <h1>Crie sua conta de graça!</h1>
     <form>
-        <input id="username" placeholder="Username" />
-        <input id="email" placeholder="E-mail" />
-        <input id="password" placeholder="Senha" />
-        <input id="confirmPassword" placeholder="Confirmar Senha" />
+        <input required id="username" placeholder="Username" />
+        <input required type="email" id="email" placeholder="E-mail" />
+        <input required type="password" id="password" placeholder="Senha" />
+        <input required type="password" id="confirmPassword" placeholder="Confirmar Senha" />
+        <div class="error">
+            <span hidden>Senhas diferentes</span>
+        </div>
         <button>Criar</button>
     </form>
 </section>
