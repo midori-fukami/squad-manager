@@ -35,6 +35,11 @@ namespace API.Controllers
                 return Ok(new { response = "ERROR" });
         }
 
+        /// <summary>
+        /// API para criação de usuário
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost("create")]
         public IActionResult Create(UserModel user)
         {
@@ -56,6 +61,17 @@ namespace API.Controllers
                 return Ok(new { response = "OK" });
             else
                 return Ok(new { response = "ERROR" });
+        }
+
+        /// <summary>
+        /// API para resetar a senha
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        [HttpPost("forgot")]
+        public IActionResult Forgot([FromBody] string email)
+        {
+            return Ok(new { response = "OK" });
         }
     }
 }
