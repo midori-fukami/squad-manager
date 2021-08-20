@@ -348,3 +348,7 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/API/Migrations/20210820010951_Remove-confirm-password.Designer.cs
+/API/Migrations/20210820010951_Remove-confirm-password.cs
+/API/Migrations/20210820005432_NewDatabase.Designer.cs
+/API/Migrations/20210820005432_NewDatabase.cs
