@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+    ViewData["Tittle"] = "Redefinir a senha";
+}
+
+<link href="~/css/login.css" rel="stylesheet" />
+
+<section>
+    <h1>Redefinir a senha</h1>
+    <form>
+        <input required type="password" id="password" placeholder="Senha" />
+        <input required type="password" id="confirmPassword" placeholder="Confirmar senha" />
+        <div class="error">
+            <span hidden>Senhas diferentes</span>
+        </div>
+        <button>Enviar</button>
+    </form>
+</section>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/reset.js"></script>

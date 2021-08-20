@@ -52,5 +52,10 @@ namespace SquadManager.Controllers
         {
             return View();
         }
+
+        public IActionResult Reset()
+        {
+            return View();
+        }
     }
 }
