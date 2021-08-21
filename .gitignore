@@ -352,3 +352,7 @@ MigrationBackup/
 /API/Migrations/20210820010951_Remove-confirm-password.cs
 /API/Migrations/20210820005432_NewDatabase.Designer.cs
 /API/Migrations/20210820005432_NewDatabase.cs
+/API/Migrations/20210821014932_AddPersonPK.Designer.cs
+/API/Migrations/20210821014932_AddPersonPK.cs
+/API/Migrations/20210821014308_AddPerson.Designer.cs
+/API/Migrations/20210821014308_AddPerson.cs

@@ -13,5 +13,7 @@ namespace API.Context
         }
 
         public DbSet<UserEntity> Users { get; set; }
+
+        public DbSet<PersonEntity> Persons { get; set; }
     }
 }
