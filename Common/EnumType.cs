@@ -1,6 +1,6 @@
 ﻿namespace Common
 {
-    enum EnumType
+    public enum EnumType
     {
         ADMIN,
         OP

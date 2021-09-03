@@ -2,14 +2,20 @@
 
 using Repository.Entity;
 
-namespace API.Context
+namespace Repository.Context
 {
     public class EFContext : DbContext
     {
-        private const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=EFCore;Trusted_Connection=True;";
+        public EFContext(DbContextOptions<EFContext> options):
+            base(options) { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<UserEntity> Users { get; set; }
