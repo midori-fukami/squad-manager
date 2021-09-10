@@ -1,4 +1,5 @@
-﻿using API.Validator;
+﻿using API.Services;
+using API.Validator;
 
 using Common;
 
@@ -21,6 +22,12 @@ namespace API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly IPersonService _personService;
+        public UserController(IPersonService personService)
+        {
+            _personService = personService;
+        }
+
         /// <summary>
         /// Autentica o usuário
         /// </summary>
@@ -82,6 +89,18 @@ namespace API.Controllers
         [HttpPost("reset")]
         public IActionResult Reset(UserModel user)
         {
+            return Ok(new { response = "OK" });
+        }
+
+
+        [HttpGet("test")]
+        public IActionResult Test()
+        {
+            _personService.AddPerson(new PersonModel()
+            {
+                Email="emailteste@lala.com",
+                Username= "user teste"
+            });
             return Ok(new { response = "OK" });
         }
     }
