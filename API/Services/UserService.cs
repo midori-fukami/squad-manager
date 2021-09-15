@@ -18,6 +18,7 @@ namespace API.Services
         {
             UserEntity entity = new UserEntity()
             {
+                PersonId = model.PersonId,
                 Password = model.Password,
                 Type = EnumType.ADMIN.ToString()
             };
