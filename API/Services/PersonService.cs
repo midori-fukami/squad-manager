@@ -24,5 +24,17 @@ namespace API.Services
 
             return _personRepository.Add(entity);
         }
+
+        public void UpdatePerson(PersonModel model)
+        {
+            PersonEntity entity = new PersonEntity()
+            {
+                Id = model.Id,
+                Username = model.Username,
+                Email = model.Email
+            };
+
+            _personRepository.Update(entity);
+        }
     }
 }
