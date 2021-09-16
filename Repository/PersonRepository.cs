@@ -19,5 +19,11 @@ namespace Repository
 
             return entity.Id;
         }
+
+        public void Update(PersonEntity entity)
+        {
+            _dataContext.Update(entity);
+            _dataContext.SaveChanges();
+        }
     }
 }

@@ -84,6 +84,21 @@ namespace API.Controllers
         }
 
         /// <summary>
+        /// API para edição de usuário
+        /// </summary>
+        /// <param name="user">modelo de usuário</param>
+        /// <returns>Ok se tudo certo</returns>
+        [HttpPatch("update")]
+        public IActionResult Update(UserModel user)
+        {
+            _userService.UpdateUser(user);
+
+            _personService.UpdatePerson(user.Person);
+
+            return Ok(new { response = "OK" });
+        }
+
+        /// <summary>
         /// API para resetar a senha
         /// </summary>
         /// <param name="email"></param>

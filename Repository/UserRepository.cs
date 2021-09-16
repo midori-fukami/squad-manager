@@ -1,10 +1,6 @@
 ﻿using Repository.Context;
 using Repository.Entity;
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Repository
 {
     public class UserRepository: IUserRepository
@@ -19,6 +15,12 @@ namespace Repository
         public void Add(UserEntity entity)
         {
             _dataContext.Add(entity);
+            _dataContext.SaveChanges();
+        }
+
+        public void Update(UserEntity entity)
+        {
+            _dataContext.Update(entity);
             _dataContext.SaveChanges();
         }
     }
