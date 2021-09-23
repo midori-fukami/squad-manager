@@ -1,0 +1,25 @@
+﻿form {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+    form input {
+        margin-bottom: 15px;
+    }
+
+        form input:last-of-type {
+            margin-bottom: 0;
+        }
+
+    form button {
+        margin-top: 15px;
+    }
+
+.error {
+    height: 20px;
+}
+
+    .error span {
+        color: red;
+    }
