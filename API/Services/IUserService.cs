@@ -7,5 +7,6 @@ namespace API.Services
         public void AddUser(UserModel model);
 
         public void UpdateUser(UserModel model);
+        public UserModel Login(UserModel user);
     }
 }

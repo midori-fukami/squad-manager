@@ -4,14 +4,9 @@ using API.Validator;
 using Common;
 
 using FluentValidation.Results;
-
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace API.Controllers
 {
@@ -40,10 +35,21 @@ namespace API.Controllers
         [HttpPost]
         public IActionResult Login(UserModel user)
         {
-            if(user.Password == "123")
-                return Ok(new { response = "OK" });
-            else
+            var result = _userService.Login(user);
+
+            if(result != null)
+            {
+                return Ok(new
+                {
+                    UserId = result.Id,
+                    PersonId = result.PersonId,
+                    Email = result.Person.Email,
+                    Username = result.Person.Username
+                });
+            } else
+            {
                 return Ok(new { response = "ERROR" });
+            }
         }
 
         /// <summary>

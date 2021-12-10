@@ -1,17 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using SquadManager.Models;
 
 namespace SquadManager.Controllers
 {
     public class UserController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Edit(UserViewModel model)
         {
-            return View();
+            return View(model ?? new UserViewModel());
         }
     }
 }
