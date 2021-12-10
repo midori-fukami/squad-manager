@@ -14,7 +14,7 @@
         <input type="password" required id="password" name="password" value="@Model.Password" placeholder="Senha" />
         <a href="/Login/Forgot">Esqueceu a senha?</a>
 
-        <button type="submit">Login</button>
+        <button id="btnLogin" type="submit" data-url="@Url.Action("Edit", "User")">Login</button>
     </form>
 
     <label>Não tem conta? <a href="/Login/SignUp">Crie aqui</a></label>

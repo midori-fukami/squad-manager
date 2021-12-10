@@ -2,8 +2,11 @@
     event.preventDefault();
 
     var formData = {
-        email: $("#email").val(),
-        password: $("#password").val()
+        "password": $("#password").val(),
+        "person": {
+            "email": $("#email").val(),
+            "username": $("#email").val()
+        }
     }
 
     $.ajax({
@@ -13,10 +16,16 @@
         data: JSON.stringify(formData),
         url: "https://localhost:44317/api/user",
         success: function (result) {
-            if (result.response == 'OK')
-                alert("Logado")
-            else
+            if (result.response == 'ERROR')
                 alert("Credenciais inválidas")
+            else {
+                let baseUrl = $('#btnLogin').data('url');
+                window.location = baseUrl + "?" +
+                    "UserId=" + result.userId +
+                    "&PersonId=" + result.personId +
+                    "&Username=" + result.username +
+                    "&Email=" + result.email;
+            }                
         },
         error: function (error) {
             console.log(error);

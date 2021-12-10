@@ -1,4 +1,5 @@
-﻿@{ 
+﻿@model SquadManager.Models.UserViewModel
+@{ 
     ViewData["Title"] = "Editar Conta";
 }
 
@@ -8,8 +9,10 @@
     <h2>Editar Conta</h2>
     <hr />
     <form>
-        <input class="form-control" required id="username" placeholder="Username" />
-        <input class="form-control" required type="email" id="email" placeholder="E-mail" />
+        @Html.HiddenFor(o => o.UserId)
+        @Html.HiddenFor(o => o.PersonId)
+        <input value="@Model.Username" class="form-control" required id="username" placeholder="Username" />
+        <input value="@Model.Email" class="form-control" required type="email" id="email" placeholder="E-mail" />
         <input class="form-control" required type="password" id="password" placeholder="Senha" />
         <input class="form-control" required type="password" id="confirmPassword" placeholder="Confirmar Senha" />
         <div class="error">
@@ -20,6 +23,7 @@
 </section>
 
 @section Scripts{
+    <script src="~/js/user.js"></script>
     <script>
         changeMenu('user')
     </script>

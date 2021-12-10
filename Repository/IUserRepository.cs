@@ -7,5 +7,6 @@ namespace Repository
         public void Add(UserEntity entity);
 
         public void Update(UserEntity entity);
+        public UserEntity Login(UserEntity entity);
     }
 }

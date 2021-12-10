@@ -1,5 +1,7 @@
-﻿using Repository.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using Repository.Context;
 using Repository.Entity;
+using System.Linq;
 
 namespace Repository
 {
@@ -22,6 +24,14 @@ namespace Repository
         {
             _dataContext.Update(entity);
             _dataContext.SaveChanges();
+        }
+
+        public UserEntity Login(UserEntity entity)
+        {
+            return _dataContext.Users.Include("Person").FirstOrDefault(o =>
+                o.Password == entity.Password &&
+                    (o.Person.Email == entity.Person.Email ||
+                    o.Person.Username == entity.Person.Username));
         }
     }
 }

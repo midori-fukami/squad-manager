@@ -38,5 +38,31 @@ namespace API.Services
 
             _userRepository.Update(entity);
         }
+
+        public UserModel Login(UserModel model)
+        {
+            UserEntity entity = new UserEntity()
+            {
+                Person = new PersonEntity()
+                {
+                    Email = model.Person.Email,
+                    Username = model.Person.Username
+                },
+                Password = model.Password
+            };
+
+            entity = _userRepository.Login(entity);
+
+            if(entity != null)
+            {
+                model.Id = entity.Id;
+                model.PersonId = entity.PersonId;
+                model.Person.Email = entity.Person.Email;
+                model.Person.Username = entity.Person.Username;
+                return model;
+            }
+
+            return null;
+        }
     }
 }
