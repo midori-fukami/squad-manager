@@ -45,9 +45,9 @@ namespace API.Services
             {
                 Person = new PersonEntity()
                 {
-                    Email = model.Person.Email,
-                    Username = model.Person.Username
+                    Email = model.Person.Email                    
                 },
+                Username = model.Username,
                 Password = model.Password
             };
 
@@ -58,7 +58,7 @@ namespace API.Services
                 model.Id = entity.Id;
                 model.PersonId = entity.PersonId;
                 model.Person.Email = entity.Person.Email;
-                model.Person.Username = entity.Person.Username;
+                model.Username = entity.Username;
                 return model;
             }
 

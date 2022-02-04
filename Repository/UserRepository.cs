@@ -31,7 +31,7 @@ namespace Repository
             return _dataContext.Users.Include("Person").FirstOrDefault(o =>
                 o.Password == entity.Password &&
                     (o.Person.Email == entity.Person.Email ||
-                    o.Person.Username == entity.Person.Username));
+                    o.Username == entity.Username));
         }
     }
 }
