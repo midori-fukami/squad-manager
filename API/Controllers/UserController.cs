@@ -44,7 +44,7 @@ namespace API.Controllers
                     UserId = result.Id,
                     PersonId = result.PersonId,
                     Email = result.Person.Email,
-                    Username = result.Person.Username
+                    Username = result.Username
                 });
             } else
             {
@@ -77,13 +77,14 @@ namespace API.Controllers
             var personId = _personService.AddPerson(new PersonModel()
             {
                 Email = user.Person.Email,
-                Username = user.Person.Username
+                Name = user.Person.Name
             });
 
             _userService.AddUser(new UserModel()
             {
                 PersonId = personId,
-                Password = user.Password
+                Password = user.Password,
+                Username = user.Username
             });
 
             return Ok(new { response = "OK" });                
@@ -126,16 +127,5 @@ namespace API.Controllers
             return Ok(new { response = "OK" });
         }
 
-
-        [HttpGet("test")]
-        public IActionResult Test()
-        {
-            _personService.AddPerson(new PersonModel()
-            {
-                Email="emailteste@lala.com",
-                Username= "user teste"
-            });
-            return Ok(new { response = "OK" });
-        }
     }
 }

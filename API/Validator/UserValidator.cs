@@ -13,7 +13,7 @@ namespace API.Validator
     {
         public UserValidator()
         {
-            RuleFor(user => user.Person.Username).NotNull().WithMessage("Username vazio");
+            RuleFor(user => user.Username).NotNull().WithMessage("Username vazio");
             RuleFor(user => user.Person.Email).NotNull().WithMessage("E-mail vazio");
             RuleFor(user => user.Person.Email).EmailAddress().WithMessage("O e-mail está inválido");
             RuleFor(user => user.Password).NotNull().WithMessage("Digite a senha");

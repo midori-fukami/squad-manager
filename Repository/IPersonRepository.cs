@@ -1,4 +1,5 @@
-﻿using Repository.Entity;
+﻿using Common;
+using Repository.Entity;
 
 namespace Repository
 {
@@ -7,5 +8,9 @@ namespace Repository
         public int Add(PersonEntity entity);
 
         public void Update(PersonEntity entity);
+
+        public PersonEntity Get(int id);
+        
+        public void Delete(int id);
     }
 }
