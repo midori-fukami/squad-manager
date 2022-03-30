@@ -1,5 +1,4 @@
-﻿using Common;
-using Repository.Entity;
+﻿using Repository.Entity;
 
 namespace Repository
 {
