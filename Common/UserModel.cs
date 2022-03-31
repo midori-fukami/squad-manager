@@ -8,9 +8,7 @@
 
         public string Password { get; set; }
 
-        public string ConfirmPassword { get; set; }
-
-        public string Type { get; set; }
+        public string ConfirmPassword { get; set; }        
 
         public string ResetHash { get; set; }
 

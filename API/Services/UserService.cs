@@ -20,7 +20,7 @@ namespace API.Services
             {
                 PersonId = model.PersonId,
                 Password = model.Password,
-                Type = EnumType.ADMIN.ToString()
+                Username = model.Username
             };
 
             _userRepository.Add(entity);
@@ -33,7 +33,7 @@ namespace API.Services
                 Id = model.Id,
                 PersonId = model.PersonId,
                 Password = model.Password,
-                Type = model.Type
+                Username = model.Username
             };
 
             _userRepository.Update(entity);
