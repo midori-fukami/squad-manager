@@ -1,0 +1,34 @@
+﻿@model SquadManager.Models.PersonViewModel
+
+@{
+    var title = Model.Id.HasValue ? "Editar Pessoa" : "Criar Pessoa";
+    ViewData["Title"] = title;
+}
+
+<link href="~/css/person.css" rel="stylesheet" />
+
+
+
+<section>
+    <h2>@title</h2>
+    <hr />
+    <form>
+        @Html.HiddenFor(o => o.Id)
+        <input value="@Model.Name" class="form-control" required id="name" placeholder="Name" />
+        <input value="@Model.Email" class="form-control" required type="email" id="email" placeholder="E-mail" />
+        <select class="form-control form-select" required id="type">
+            <!option @(string.IsNullOrEmpty(Model.Type) ? "selected" : string.Empty)>Selecione o tipo</!option>
+            <!option @(Model.Type == "ADMIN" ? "selected" : string.Empty) value="ADMIN">ADMIN</!option>
+            <!option @(Model.Type == "OP" ? "selected" : string.Empty) value="OP">OP</!option>
+        </select>
+        <button class="btn btn-primary">Salvar</button>
+    </form>
+</section>
+
+
+@section Scripts{
+    <script src="~/js/person.js"></script>
+    <script>
+        changeMenu('home')
+    </script>
+}
